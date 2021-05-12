@@ -41,3 +41,63 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: SortingLayer1
+    uniqueID: 1560686567
+    locked: 0
+  - name: SortingLayer2
+    uniqueID: 1033850065
+    locked: 0
+  - name: SortingLayer3
+    uniqueID: 3999317199
+    locked: 0
+  - name: SortingLayer4
+    uniqueID: 1114954455
+    locked: 0
+  - name: SortingLayer5
+    uniqueID: 2854497755
+    locked: 0
+  - name: SortingLayer6
+    uniqueID: 700041479
+    locked: 0
+  - name: SortingLayer7
+    uniqueID: 861461449
+    locked: 0
+  - name: SortingLayer8
+    uniqueID: 2869779133
+    locked: 0
+  - name: SortingLayer9
+    uniqueID: 792806887
+    locked: 0
+  - name: SortingLayer10
+    uniqueID: 1942785093
+    locked: 0
+  - name: SortingLayer11
+    uniqueID: 1955924307
+    locked: 0
+  - name: SortingLayer12
+    uniqueID: 743837711
+    locked: 0
+  - name: SortingLayer13
+    uniqueID: 3069121369
+    locked: 0
+  - name: SortingLayer14
+    uniqueID: 3450393361
+    locked: 0
+  - name: SortingLayer15
+    uniqueID: 713263765
+    locked: 0
+  - name: SortingLayer16
+    uniqueID: 3504558747
+    locked: 0
+  - name: SortingLayer17
+    uniqueID: 1741667715
+    locked: 0
+  - name: SortingLayer18
+    uniqueID: 3904098139
+    locked: 0
+  - name: SortingLayer19
+    uniqueID: 2482236781
+    locked: 0
+  - name: SortingLayer20
+    uniqueID: 4141599017
+    locked: 0
