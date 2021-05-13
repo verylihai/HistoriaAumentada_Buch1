@@ -4,18 +4,16 @@ using UnityEngine.Playables;
 using Vuforia;
 
 namespace Assets.Scripts {
+
     public class CapaTargetDetection : MonoBehaviour {
         private TrackableBehaviour mTrackableBehaviour;
         public AudioSource audioSource;
         public PlayableDirector director;
-        private IEnumerator fadeInSound, fadeOutSound;
 
         private bool initialPlay = true;
 
         void Start() {
             mTrackableBehaviour = GetComponent<TrackableBehaviour>();
-            fadeInSound = AudioSourceFadeIn(audioSource, .5f);
-            fadeOutSound = AudioSourceFadeOut(audioSource, .1f);
             if (mTrackableBehaviour) {
                 mTrackableBehaviour.RegisterOnTrackableStatusChanged(OnTrackableStatusChanged);
             }
@@ -32,35 +30,37 @@ namespace Assets.Scripts {
         private void OnTrackingFound() {
             if (initialPlay) {
                 director.Play();
-                audioSource.Play();
-                StopCoroutine(fadeOutSound);
-                StartCoroutine(fadeInSound);
-                initialPlay = false;
             }
+            StopCoroutine("AudioSourceFadeOut");
+            StartCoroutine("AudioSourceFadeIn");
         }
         private void OnTrackingLost() {
-            StopCoroutine(fadeInSound);
-            StartCoroutine(fadeOutSound);
+            StopCoroutine("AudioSourceFadeIn");
+            StartCoroutine("AudioSourceFadeOut");
         }
 
-        public static IEnumerator AudioSourceFadeIn(AudioSource audioSource, float FadeTime) {
-            float startVolume = audioSource.volume;
+        public IEnumerator AudioSourceFadeIn() {
+            float startVolume = 0.333f;
+            float FadeTime = .5f;
 
-            while (audioSource.volume < 1) {
+            audioSource.volume = 0;
+            audioSource.Play();
+
+            while (audioSource.volume < 1f) {
                 audioSource.volume += startVolume * Time.deltaTime / FadeTime;
                 yield return null;
             }
 
         }
 
-        public static IEnumerator AudioSourceFadeOut(AudioSource audioSource, float FadeTime) {
+        public IEnumerator AudioSourceFadeOut() {
             float startVolume = audioSource.volume;
+            float FadeTime = 1f;
 
-            while (audioSource.volume > 0) {
+            while (audioSource.volume > 0f) {
                 audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
                 yield return null;
             }
-
         }
 
     }
