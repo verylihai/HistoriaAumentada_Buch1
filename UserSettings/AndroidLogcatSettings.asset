@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "emulator-5554",
+    "m_SelectedDeviceId": "RX8N30B69ZP",
     "m_SelectedPackage": {
-        "deviceId": "RX8N30B69ZP",
-        "name": "com.GameEver.HistoriaAumentada_Buch1",
-        "processId": 1834,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -12,6 +12,12 @@
             "deviceId": "RX8N30B69ZP",
             "name": "com.GameEver.HistoriaAumentada_Buch1",
             "processId": 1834,
+            "exited": true
+        },
+        {
+            "deviceId": "RX8N30B69ZP",
+            "name": "com.GameEver.HistoriaAumentada_Buch1",
+            "processId": 26488,
             "exited": false
         }
     ],
