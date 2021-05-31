@@ -166,7 +166,7 @@ Shader "Smkgames/Surface/Iridescence/Bubble" {
       //	o.Albedo = lerp(0,colorRampHSBC,_Blend)*BubbleRim;
 
       float4 GrabDistortion = tex2D(_GrabNoise, IN.grabUV.xy) / 5;
-      float4 BackGround = tex2Dproj(_MyGrabTexture, UNITY_PROJ_COORD(IN.grabUV + GrabDistortion.r)) / 10;
+      float4 BackGround = tex2Dproj(_MyGrabTexture, UNITY_PROJ_COORD(IN.grabUV + GrabDistortion.r)) / 5;
       o.Albedo = BackGround;
 
       o.Emission = BackGround + texCUBE(_Cube, IN.worldRefl).rgb + lerp(0, colorRampHSBC, _Blend);
