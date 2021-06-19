@@ -147,7 +147,7 @@ Shader "Smkgames/Surface/Iridescence/Bubble" {
       float4 c = tex2D(_MainTex, IN.uv_MainTex);
       float noise = tex2D(_Noise, IN.uv_MainTex);
       //fixed3 normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
-      //			normal.z /= _BumpPower;
+      //normal.z /= _BumpPower;
       //o.Normal = normalize(normal); 
       float4 rim = dot(normalize(IN.viewDir), o.Normal);
       float2 distortion = noise * _Distortion;
@@ -163,7 +163,7 @@ Shader "Smkgames/Surface/Iridescence/Bubble" {
       float4 Bubble = tex2D(_BubbleTexture, IN.uv_MainTex);
       fixed4 hsbc = fixed4(_Hue, _Saturation, _Brightness, _Contrast);
       float4 colorRampHSBC = applyHSBCEffect(colorRamp, hsbc);
-      //	o.Albedo = lerp(0,colorRampHSBC,_Blend)*BubbleRim;
+      //o.Albedo = lerp(0,colorRampHSBC,_Blend)*BubbleRim;
 
       float4 GrabDistortion = tex2D(_GrabNoise, IN.grabUV.xy) / 5;
       float4 BackGround = tex2Dproj(_MyGrabTexture, UNITY_PROJ_COORD(IN.grabUV + GrabDistortion.r)) / 5;
